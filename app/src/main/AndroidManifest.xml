@@ -27,6 +27,8 @@
         <activity
             android:name=".SlozenaListaActivity" />
         <activity
+            android:name=".GridActivity" />
+        <activity
             android:name=".DetaljActivity" />
     </application>
 

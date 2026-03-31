@@ -24,7 +24,16 @@ class NajjednostavnijaListaActivity : AppCompatActivity(){
         val recyclerView = binding.recyclerView
 
         // 1. Postavi LayoutManager
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        if (intent.getBooleanExtra("ORIJENTACIJA", false)) {
+            // Klasična "okomita orijentacija"
+            recyclerView.layoutManager = LinearLayoutManager(this)
+        }else {
+            // vodoravno
+            recyclerView.layoutManager = LinearLayoutManager(this,
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
+        }
 
         // 2. Dodaj podatke u adapter i spoji ga s RV
         lista = Pomocna.ucitajStringove()

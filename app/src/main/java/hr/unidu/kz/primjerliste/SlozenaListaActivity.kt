@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.serialization.Serializable
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.Json
 import hr.unidu.kz.primjerliste.databinding.ActivitySlozenaListaBinding
 import hr.unidu.kz.primjerliste.databinding.ItemPokemonBinding
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 class SlozenaListaActivity : AppCompatActivity(){
     private lateinit var binding: ActivitySlozenaListaBinding
@@ -26,7 +25,16 @@ class SlozenaListaActivity : AppCompatActivity(){
         val recyclerView = binding.recyclerView
 
         // 1. Postavi LayoutManager
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        if (intent.getBooleanExtra("ORIJENTACIJA", false)) {
+            // Klasična "okomita orijentacija"
+            recyclerView.layoutManager = LinearLayoutManager(this)
+        }else {
+            // vodoravno
+            recyclerView.layoutManager = LinearLayoutManager(this,
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
+        }
 
         binding.pokIme.setText("Lista pokemona")
         binding.pokIme.isFocusable = false

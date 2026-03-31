@@ -3,4 +3,5 @@
     <string name="najjednostavnija">Najjednostavnija lista</string>
     <string name="jednostavna">Jednostavna lista</string>
     <string name="slozena">Složena lista sa slikama</string>
+    <string name="gridSlozena">Grid sa slikama</string>
 </resources>
