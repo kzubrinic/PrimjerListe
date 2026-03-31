@@ -27,20 +27,9 @@ class NajjednostavnijaListaActivity : AppCompatActivity(){
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         // 2. Dodaj podatke u adapter i spoji ga s RV
-        ucitajPodatke()
+        lista = Pomocna.ucitajStringove()
         mojAdapter = NajjednostavnijaListaAdapter(lista)
         recyclerView.adapter = mojAdapter
-    }
-
-    fun ucitajPodatke() {
-
-        lista = listOf(
-            "Abra", "Absol", "Alakazam", "Arbok", "Arcanine", "Articuno",
-            "Bagon", "Bayleef", "Beedrill", "Bellossom", "Bellsprout",
-            "Blastoise", "Blaziken", "Breloom", "Bulbasaur", "Buneary",
-            "Butterfree", "Cacnea", "Cacturne", "Camerupt", "Caterpie",
-            "Celebi", "Charizard", "Charmander", "Charmeleon"
-        )
     }
 }
 

@@ -28,7 +28,7 @@ class JednostavnaListaActivity : AppCompatActivity(){
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         // 2. Dodaj podatke u adapter i spoji ga s RV
-        ucitajPodatke()
+        lista = Pomocna.ucitajStringove() as MutableList<String>
         mojAdapter = JednostavnaAdapter(
             lista,
             onItemClick = { izabrani ->
@@ -52,17 +52,6 @@ class JednostavnaListaActivity : AppCompatActivity(){
             mojAdapter.notifyItemInserted(lista.size - 1)
 
         }
-    }
-
-    fun ucitajPodatke() {
-
-        lista = mutableListOf(
-            "Abra", "Absol", "Alakazam", "Arbok", "Arcanine", "Articuno",
-            "Bagon", "Bayleef", "Beedrill", "Bellossom", "Bellsprout",
-            "Blastoise", "Blaziken", "Breloom", "Bulbasaur", "Buneary",
-            "Butterfree", "Cacnea", "Cacturne", "Camerupt", "Caterpie",
-            "Celebi", "Charizard", "Charmander", "Charmeleon"
-        )
     }
 }
 
