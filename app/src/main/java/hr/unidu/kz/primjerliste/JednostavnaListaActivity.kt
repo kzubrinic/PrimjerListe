@@ -36,7 +36,7 @@ class JednostavnaListaActivity : AppCompatActivity(){
         }
 
         // 2. Dodaj podatke u adapter i spoji ga s RV
-        lista = Pomocna.ucitajStringove() as MutableList<String>
+        lista = Pomocna.ucitajStringove().toMutableList()
         mojAdapter = JednostavnaAdapter(
             lista,
             onItemClick = { izabrani ->
@@ -58,7 +58,8 @@ class JednostavnaListaActivity : AppCompatActivity(){
             }
             lista.add(novi) // dodaje se na kraj
             mojAdapter.notifyItemInserted(lista.size - 1)
-
+            // Pozicioniraj s ena dodani element
+            recyclerView.scrollToPosition(lista.size - 1)
         }
     }
 }
